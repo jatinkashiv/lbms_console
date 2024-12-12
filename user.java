@@ -1,17 +1,19 @@
 package LBMS;
+import java.util.ArrayList;
+import java.util.List;
 
 class user
 {
     String name;
-    List<Book> borrowedBooks;
+    List<book> borrowedBooks;
     List<String> borrowedRecords;
     
-    User(String name)
+    user(String name)
     {
         
         this.name = name;
-        borrowed = new ArrayList<>();
-        BorrowedHistory = new ArrayList<>();
+        borrowedBooks = new ArrayList<>();
+        borrowedRecords = new ArrayList<>();
     }
 
     public String getName()
@@ -19,7 +21,7 @@ class user
         return name;
     }
 
-    public List<Book> getBorrowed()
+    public List<book> getBorrowed()
     {
         return borrowedBooks;
     }
@@ -29,14 +31,14 @@ class user
         return borrowedRecords;
     }
 
-    public void borrowBook(Book book)
+    public void borrowBook(book book)
     {
         borrowedBooks.add(book);
         book.borrowBook();
         borrowedRecords.add("Book Borrowed " + book.getTitle()+" by "+book.getAuthor());
     }
 
-    public void returnBook(Book book)
+    public void returnBook(book book)
     {
         borrowedBooks.remove(book);
         book.returnBook();
