@@ -39,4 +39,29 @@ public class library {
         }
     }
 
+    public void addUser(String name)
+    {
+        user u = new user(name);
+        users.add(u);
+    }
+
+    public void removeUser(String name)
+    {
+        for(int i=0;i<users.size();i++)
+        {
+            user u = users.get(i);
+            if(name.equalsIgnoreCase(u.getName()))
+            {
+                users.remove(u);
+            }
+        }
+    }
+
+    public void showUsers()
+    {
+        for(int i=0;i<users.size();i++)
+        {
+            System.out.println(users.get(i).getName());
+        }
+    }
 }
