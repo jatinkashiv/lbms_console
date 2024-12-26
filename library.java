@@ -64,4 +64,51 @@ public class library {
             System.out.println(users.get(i).getName());
         }
     }
+
+    public void Borrow(String name, String title)
+    {
+        user u = null;
+        for(int i=0;i<users.size();i++)
+        {
+            u = users.get(i);
+            if(name.equalsIgnoreCase(u.getName()))
+            {
+                break; 
+            }
+        }
+        book b = null;
+        for(int i=0;i<books.size();i++)
+        {
+            b = books.get(i);
+            if(title.equalsIgnoreCase(b.getTitle()))
+            {
+                break;
+            }
+        }
+        u.borrowBook(b);       
+    }
+
+    public void Return(String name, String title)
+    {
+        user u = null;
+        for(int i=0;i<users.size();i++)
+        {
+            u = users.get(i);
+            if(name.equalsIgnoreCase(u.getName()))
+            {
+                break;
+            }
+        }
+        book b = null;
+        for(int i=0;i<books.size();i++)
+        {
+            b = books.get(i);
+            if(title.equalsIgnoreCase(b.getTitle()))
+            {
+                break;
+            }
+        }
+        u.returnBook(b);
+    }
+
 }
